@@ -14,9 +14,12 @@ validateMigrationNaming = true
   sqlplus = true
 
 [flywayDesktop]
+enableMigrations = false
 developmentEnvironment = "development"
 shadowEnvironment = "shadow"
-showDeploymentDecision = true
+
+  [flywayDesktop.generate]
+  undoScripts = false
 
 [redgateCompare]
 filterFile = "filter.rgf"
