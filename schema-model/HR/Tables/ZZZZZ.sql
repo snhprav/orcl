@@ -1,0 +1,4 @@
+CREATE TABLE hr.zzzzz (
+  "ID" NUMBER,
+  "NAME" VARCHAR2(20 BYTE)
+);

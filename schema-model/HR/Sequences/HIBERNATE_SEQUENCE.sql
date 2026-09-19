@@ -1,0 +1,1 @@
+CREATE SEQUENCE hr.hibernate_sequence;

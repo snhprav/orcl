@@ -1,0 +1,111 @@
+databaseType = "Oracle"
+id = "fe19e4f2-e5a4-43c9-941c-9d1c1bebe7f0"
+name = "neworcl"
+
+[flyway]
+callbackLocations = [ "filesystem:callbacks" ]
+locations = [ "filesystem:migrations" ]
+mixed = true
+outOfOrder = true
+schemaModelLocation = "schema-model"
+validateMigrationNaming = true
+
+  [flyway.oracle]
+  sqlplus = true
+
+[flywayDesktop]
+developmentEnvironment = "development"
+shadowEnvironment = "shadow"
+showDeploymentDecision = true
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+  [redgateCompare.oracle]
+  ignoreRulesFile = "IgnoreRules.scpf"
+  filterFile = "Filter.scpf"
+
+[redgateCompare.oracle.options.behavior]
+forceColumnOrder = false
+useForwardSlash = false
+includeSetDefineOff = true
+includeSetBlankLinesOn = false
+includeSystemPermissions = false
+includeUserRoles = false
+includeProgramUnitRoles = false
+includeCrossSchemaPermissions = true
+excludeSchemaNames = false
+detectRenamedColumns = true
+addPurgeClauseToAllTableDrops = false
+suppressDependentAlterCompile = false
+includeSetDefineOffToScripter = true
+
+[redgateCompare.oracle.options.ignores]
+ignoreSlowDependencies = true
+ignoreDependentObjectsInOtherSchemas = true
+ignoreWhitespace = true
+ignoreCaseDifferencesInPlSqlBlocks = false
+ignoreDoubleQuotesInPlSqlBlocks = true
+ignoreExternalTableLocationInformation = false
+ignoreCommentsInPlSqlBlocks = false
+ignoreCommentsOnTablesViewsAndColumns = false
+ignoreConstraintNames = false
+ignoreIndexNames = false
+ignoreLobStorage = false
+ignoreParallel = false
+ignoreSequenceCurrentValue = true
+ignorePermissions = true
+ignoreSupplementalLogGroups = false
+ignoreMaterializedViewStartWithValue = true
+ignoreLengthSemantics = false
+ignoreSystemPartitions = false
+
+[redgateCompare.oracle.options.storage]
+includeAllStorage = false
+includeStorageCompression = false
+includeStorageDeferredSegments = false
+includeStorageExtents = false
+includeStorageIlmPolicies = false
+includeStorageIniTrans = false
+includeStorageLobsAndVarrays = false
+includeStorageLogging = false
+includeStoragePartitioning = false
+includeStoragePctFree = false
+includeStorageTablespace = false
+
+[redgateCompare.oracle.data.options.comparison]
+checkTablesForData = false
+includeViews = false
+trimTrailingSpaces = false
+ignoreControlCharacters = false
+ignoreWhiteSpace = false
+includeSourceTables = true
+ignoreDateTypeDifferences = false
+
+  [[redgateCompare.staticDataTables]]
+  schema = "HR"
+  table = "COUNTRIES"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "HR"
+  table = "DEPARTMENTS"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "HR"
+  table = "REGIONS"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "HR"
+  table = "LOCATIONS"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "HR"
+  table = "JOBS"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "HR"
+  table = "EMPLOYEES"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "HR"
+  table = "JOB_HISTORY"

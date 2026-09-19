@@ -1,0 +1,1 @@
+CREATE INDEX hr.loc_state_province_ix ON hr.locations(state_province);
