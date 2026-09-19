@@ -112,3 +112,7 @@ ignoreDateTypeDifferences = false
   [[redgateCompare.staticDataTables]]
   schema = "HR"
   table = "JOB_HISTORY"
+
+[environments.target1]
+url = "jdbc:oracle:thin:@//localhost:1521/orcl"
+schemas = [ "SAMPLE123" ]
